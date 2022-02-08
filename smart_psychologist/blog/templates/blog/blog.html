@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock perpageStyle %}
+
+{% block title %} Blog {% endblock title %}
+
+
+{% block top_banner %}
+{% include 'blog/blogbanner.html' %}
+{% endblock top_banner %}
+
+
+{% block main-content %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% for post in posts %}
+        <div class="card mx-auto mt-5" style="width: 28rem;">
+            {% if post.blogImage%}
+            <img class="card-img-top img-thumbnail" src=" {{ post.blogImage.url }}" alt="Card image cap"
+                style="width: 100%; height:300px;">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'blogDetails' post.slug %}"
+                        class="ml-auto blog-title">{{post.title|truncatewords:5}}</a></h5>
+                <p class="card-text">{{ post.description|truncatewords:40 }}</p>
+                <a href="{% url 'blogDetails' post.slug %}" class="ml-auto badge ">Read More</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Upload {{post.uploadDate}}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main-content %}

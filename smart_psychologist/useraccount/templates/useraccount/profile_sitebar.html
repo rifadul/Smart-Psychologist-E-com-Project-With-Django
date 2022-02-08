@@ -1,0 +1,11 @@
+{% load static %}
+<h4>Welcome {{user | capfirst }}</h4>
+<hr>
+<div class="list-group">
+    <a href="{% url 'profile' %}" class="list-group-item list-group-item-action {{pro_active}}">Profile</a>
+    <a href="{% url 'address' %}" class="list-group-item list-group-item-action {{ad_active}}">Address</a>
+
+    <a href="{% url 'updateprofile' %}" class="list-group-item list-group-item-action {{up_active}}">Profile update</a>
+    <a href="{% url 'deliveryaddress' %}" class="list-group-item list-group-item-action {{dlyAd_active}}">Add Delivery
+        Address</a>
+</div>

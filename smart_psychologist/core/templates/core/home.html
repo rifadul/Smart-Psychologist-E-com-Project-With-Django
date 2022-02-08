@@ -1,0 +1,194 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% block main-content %}
+
+<section class="header-top">
+    <div class="container d-flex align-items-center header-content-height">
+
+        <div class="row mx-auto">
+            <!-- <div class="col-md-2 col-sm-2"></div> -->
+            <div class="col-md-8 col-sm-8 mx-auto">
+                <div class="text-contain text-white text-center mx-auto">
+
+                    <h1>Welcome to Smart <br> Psychologist !</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic similique quasi nobis tenetur
+                        numquam temporibus quis</p>
+                    <div class="row">
+                        <div class="col-md-6 text-right"><a href="{% url 'shop' %}" class="btn btn-primary">Shop Now</a>
+                        </div>
+                        <div class="col-md-6 text-left"><a href="{% url 'doctor' %}" class="btn btn-primary">Doctor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-2 col-sm-2"></div> -->
+        </div>
+    </div>
+    <!-- header contain text end -->
+</section>
+<!-- header section end -->
+
+
+<!-- Agenda  section start -->
+<section class="agenda">
+    <div class="container">
+        <h2 class="text-center mb-5">Agenda</h2>
+        <div class="row">
+            <!-- intro item -->
+            <div class="col-lg-4 col-md-4 col-sm-12 intro_col mx-auto border p-2">
+                <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                    <div class="intro_icon"><img class="intro_image" src="{% static 'core/images/doctoric.png' %}"
+                            alt=""></div>
+                    <div class="intro_content">
+                        <div class="intro_title">Doctor</div>
+                        <div class="intro_subtitle">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, atque? Reprehenderit
+                                veritatis sequi quam deserunt. Accusamus, earum incidunt! Fugiat, molestiae.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- intro item -->
+            <div class="col-lg-4 col-md-4 col-sm-12 intro_col mx-auto border p-2">
+                <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                    <div class="intro_icon"><img class="intro_image" src="{% static 'core/images/doctoric.png' %}"
+                            alt=""></div>
+                    <div class="intro_content">
+                        <div class="intro_title">Shop</div>
+                        <div class="intro_subtitle">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corporis alias quidem
+                                doloremque libero asperiores veniam velit earum totam eveniet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- intro item -->
+            <div class="col-lg-4 col-md-4 col-sm-12 intro_col mx-auto border p-2">
+                <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                    <div class="intro_icon"><img class="intro_image" src="{% static 'core/images/doctoric.png' %}"
+                            alt=""></div>
+                    <div class="intro_content">
+                        <div class="intro_title">Blog</div>
+                        <div class="intro_subtitle">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga atque vitae architecto
+                                assumenda est unde maxime obcaecati, accusamus corporis nostrum. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section-bottom-border"></div>
+</section>
+<!-- Agenda  section end -->
+
+
+<!-- Royal Facilities section -->
+
+<section id="Royal_Facilities">
+
+    <div class="container p-5">
+        <!-- fro text -->
+        <div class="row pb-4">
+
+            <div class="col-md-6 col-sm-12 mx-auto">
+                <div class="Facilities_text p-3 text-center">
+                    <h2>Royal Facilities</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eligendi necessitatibus quod aut.
+                        Nostrum nesciunt deleniti, nam odit minima eius.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- for list -->
+        <div class="row">
+
+
+            <div class="col-md-4 col-sm-12 text-justify pb-4">
+                <div class="cont_text p-3 border border-white bg-color-royal">
+                    <h2><i class="fas fa-hotel pr-3"></i>Aappointment</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci nihil qui dignissimos
+                        libero dicta fugiat sapiente odit. Eius quaerat ipsum, fugiat voluptatibus consectetur eum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 text-justify pb-4">
+                <div class="cont_text p-3 border border-white bg-color-royal">
+                    <h2><i class="fas fa-hotel pr-3"></i>Doctor</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur nemo obcaecati?
+                        Incidunt repellat qui, soluta itaque magnam neque, aperiam nihil temporibus, corrupti asperiores
+                        quaerat.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 text-justify pb-4">
+                <div class="cont_text p-3 border border-white bg-color-royal">
+                    <h2><i class="fas fa-hotel pr-3"></i>Shop</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni atque asperiores dolores, dicta
+                        libero debitis amet esse modi! Animi itaque in eveniet omnis voluptate incidunt.</p>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-12 text-justify pb-4">
+                <div class="cont_text p-3 border border-white bg-color-royal">
+                    <h2><i class="fas fa-hotel pr-3"></i>Medicine</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, saepe. Rerum velit deserunt
+                        illo itaque, et mollitia inventore repellat ipsa blanditiis molestiae quam! Dignissimos, sunt.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 text-justify pb-4">
+                <div class="cont_text p-3 border border-white bg-color-royal">
+                    <h2><i class="fas fa-hotel pr-3"></i>Medicine</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, saepe. Rerum velit deserunt
+                        illo itaque, et mollitia inventore repellat ipsa blanditiis molestiae quam! Dignissimos, sunt.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 text-justify pb-4">
+                <div class="cont_text p-3 border border-white bg-color-royal">
+                    <h2><i class="fas fa-hotel pr-3"></i>Medicine</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, saepe. Rerum velit deserunt
+                        illo itaque, et mollitia inventore repellat ipsa blanditiis molestiae quam! Dignissimos, sunt.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+</section>
+
+
+<!-- about section -->
+
+
+<section id="about-section" class="p-5">
+    <div class="container p-5">
+        <div class="about">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 p-5">
+                    <h2 class="title title_color">About Us <br>Our History<br>Mission &amp; Vision</h2>
+                    <p class="text-justify pt-3">“Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non omnis
+                        quaerat itaque, odit tempora veniam eos accusantium dolorum quis, vel praesentium voluptatum
+                        sint odio illum! Repellat, sit aspernatur error expedita illo animi voluptas natus neque velit
+                        a. Facilis doloribus esse autem, exercitationem ipsum inventore, aliquid explicabo nobis hic,
+                        odio eveniet!”.</p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <img src="{% static 'core/images/about2.jpg' %}" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock main-content %}

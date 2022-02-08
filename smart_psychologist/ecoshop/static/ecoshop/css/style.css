@@ -1,0 +1,7 @@
+.page_header {
+     background-image: url(../Images/shop_banner.jpg);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 50vh;
+}

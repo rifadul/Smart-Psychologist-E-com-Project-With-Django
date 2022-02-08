@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Blog {% endblock title %}
+
+{% block main-content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% if post.blogImage %}
+            <img src="{{ post.blogImage.url }}" class="rounded mx-auto d-block my-4" alt="{{post.title}}"
+                style="width: 100%;">
+            {% endif %}
+            <h2 class="my-3"><strong>{{post.title}}</strong></h2>
+            <p>Uploade {{post.uploadDate}}</p>
+            <p class="text-justify">{{post.description}}</p>
+            <a href=" {% url 'blog' %}" class="btn btn-primary">Back</a>
+
+        </div>
+    </div>
+</div>
+{% endblock main-content %}

@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'doctor/css/style.css' %}">
+{% endblock perpageStyle %}
+{% block title %} Doctor{% endblock title %}
+
+
+{% block top_banner %}
+{% include 'doctor/doctorHeader.html' %}
+{% endblock top_banner %}
+
+{% block main-content %}
+<div class="doctor container mt-5">
+    <div class="row">
+        {% for doctor in doctorinfo %}
+        <div class="col-lg-6 col-md-6">
+            <div class="team-box-layout1">
+                <div class="media media-none-lg media-none-md media-none--xs">
+                    <div class="item-img">
+                        <img src="{{ doctor.doctor_image.url }}" alt="Team1"
+                            class="img-fluid rounded-circle media-img-auto">
+                    </div>
+                    <div class="media-body">
+                        <div class="item-content">
+                            <h4 class="item-title">
+                                <a href="single-doctor.html">{{doctor.full_name}}</a>
+                            </h4>
+                            <p class="designation">{{doctor.specialist_sector}}</p>
+                            <div class="item-degree">{{doctor.designation}}</div>
+                            <ul class="item-btns">
+                                <li>
+                                    <a href="{% url 'doctorDetails' doctor.id %}"
+                                        class="item-btn btn-ghost btn btn-outline-primary">View
+                                        Profile</a>
+                                </li>
+                                <li>
+                                    <a href="single-doctor.html" class="item-btn btn-fill btn btn-primary">Make an
+                                        Appointment</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main-content %}

@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %} {% load static %} {% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'useraccount/css/style.css' %}" />
+{% endblock perpageStyle %} {% block title %} Address Page {% endblock title %}
+{% block main-content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            {% include 'useraccount/profile_sitebar.html' %}
+        </div>
+
+        <div class="col-md-9 mx-auto mt-4">
+            <div class="text-right mb-3">
+                <a class="btn btn-info" href="{% url 'deliveryaddress' %}" role="button">Add Another Delivery
+                    Address</a>
+            </div>
+
+            <div class="row">
+                {% if add %} {% for ad in add %}
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Address {{forloop.counter}}</h4>
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td>{{ad.home_address}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Division</td>
+                                        <td>{{ad.division}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>City</td>
+                                        <td>{{ad.city}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zip Code</td>
+                                        <td>{{ad.zip_code}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} {% else %}
+            </div>
+
+            <div class="alert alert-info mt-5" role="alert">
+                Pleace add your delivery address !
+                <strong><a href="{% url 'deliveryaddress' %}">Add Delivery Address</a></strong>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock main-content %}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!-- base website css -->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+    {% block perpageStyle %}{% endblock perpageStyle %}
+
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    {% include 'core/navbar.html' %}
+
+    {% block top_banner %}{% endblock top_banner %}
+
+    {% block main-content %}{% endblock main-content %}
+
+
+    <!-- Start Footer -->
+    {% include 'core/footer.html' %}
+    <!-- <footer class="container-fluid p-2 mt-5" style="background-color: #1d262d;">
+
+
+        <div class="container-fluid text-white">
+            <div class="row">
+                <div class="col-md-4 p-5 text-justify">
+                    <h2>Smart Psychologist</h2>
+                    <hr>
+                    <p class="fp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente hic minus quidem
+                        saepe eum
+                        excepturi, exercitationem aut vitae reiciendis velit. Voluptates dicta minus ipsam officiis.</p>
+                </div>
+                <div class="col-md-4 p-5">
+                    <h2>Address</h2>
+                    <hr>
+                    <p class="fp">
+                        Datta Para,Ashulia,Savar,Dhaka
+                    </p>
+                    <p class="fp">Phone : 017 12345678</p>
+                    <p class="fp">Email : smart@gmail.com</p>
+                </div>
+                <div class="col-md-4 p-5">
+                    <h2>Social Media</h2>
+                    <hr>
+                    <div class="social">
+                        <span style="font-size: 3em;">
+                            <i class="fab fa-facebook-square"></i>
+                        </span>
+                        <span style="font-size: 3em;">
+                            <i class="fab fa-twitter-square"></i>
+                        </span>
+                        <span style="font-size: 3em;">
+                            <i class="fab fa-instagram-square"></i>
+                        </span>
+                        <span style="font-size: 3em;">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="div text-center p-2" style="background-color: rgba(55,73,87,0.5);">
+            <small class="text-white">Copyright &copy; 2021 || Designed By Creative Fish
+                || </small>
+            <img src="{% static 'core/images/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
+        </div>
+    </footer>  -->
+    <!-- End Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+
+
+
+    <!-- website javaScripts -->
+    <script src="{% static 'core/js/scripts.js' %}"></script>
+</body>
+
+</html>

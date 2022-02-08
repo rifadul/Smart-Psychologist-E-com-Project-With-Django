@@ -1,0 +1,11 @@
+{% load static %}
+<h5>Product Category</h5>
+<hr>
+<div class="list-group">
+    <a href="{% url 'shop' %}" class="list-group-item list-group-item-action {{all_active}}">All Product </a>
+    {% for cate in category %}
+    <a href="{% url 'productbycategory' cate.id %}"
+        class="list-group-item list-group-item-action {{active}}">{{cate.product_category}}</a>
+    {% endfor %}
+
+</div>

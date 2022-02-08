@@ -1,0 +1,93 @@
+body {
+     background-color: #f1f7fa !important;
+}
+.navbar-light {
+     /* background-color: #666b75 !important; */
+     background-color: #1d262dd0 !important;
+     color: white;
+}
+.navbar-bg-color {
+     background-color: #2369ff !important;
+     height: 60px;
+     color: white;
+}
+
+.navbar ul li a {
+     color: white !important;
+     font-weight: 500;
+}
+.dropdown-menu .dropdown-item {
+     color: black !important;
+}
+.navbar-active-color {
+     border-bottom: 4px solid orange;
+}
+
+/* home.html css */
+
+/* header part */
+.header-top {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/The_Doctor.jpg);
+     height: 100vh;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+/* agenda section start */
+
+.agenda {
+     padding: 5rem;
+}
+
+.intro_image {
+     height: 80px;
+}
+
+.intro_content {
+     padding-left: 28px;
+}
+.intro_title {
+     font-family: 'Oswald', sans-serif;
+     font-size: 18px;
+     color: #181818;
+     font-weight: 400;
+}
+
+/* agenda section end */
+
+/* **************************************
+  Royal_Facilities section Start 
+******************************************* */
+
+#Royal_Facilities {
+     /* background-color: rgb(0, 0, 41); */
+     background-color: rgb(35 35 35);
+     text-align: center;
+     /* color: wheat; */
+     color: white;
+}
+
+.bg-color-royal {
+     background-color: rgb(0 0 0 / 23%);
+     border-radius: 15px;
+}
+
+.bg-color-royal h2 i {
+     color: yellow;
+     font-size: 1.5rem;
+}
+
+/* **************************************
+     Royal_Facilities section end 
+   ******************************************* */
+
+/* navbar css code strat */
+header {
+     background-color: #5757ff;
+}
+
+.header-content-height {
+     height: 100vh;
+}

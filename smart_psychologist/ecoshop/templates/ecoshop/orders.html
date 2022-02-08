@@ -1,0 +1,79 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Order{% endblock title %}
+{% block main-content %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            {% if orders %}
+            <div class="card">
+                <div class="card-body">
+                    <h3>Order</h3>
+                    <!-- card product start-->
+                    {% for order in orders %}
+                    <div class="row cart_item mb-5">
+                        <div class="col-sm-3 text-center align-self-center"><img
+                                src="{{order.product.product_image.url}}" alt="" srcset=""
+                                class="img-fluid img-thumbnail shadow-sm" height="150" width="150">
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
+                                <h5>{{order.product.product_name}} </h5>
+                                <p><strong>Quantity :</strong> {{order.quantity}} pes.</p>
+                                <p class="fw-bold"><strong>Price :</strong> {{order.total_cost}} Tk.</p>
+                                <p class="fw-bold"><strong>Order Date :</strong> {{order.orderdate}} Tk.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <h6 class="my-2">Order Status</h6>
+                            {% if order.status == 'Pending' %}
+                            <div class="bg-dark text-white py-1 px-1">
+                                {{order.status}}
+                            </div>
+                            {% endif %}
+                            {% if order.status == 'Accepted' %}
+                            <div class="bg-info text-white py-1 px-2">
+                                {{order.status}}
+                            </div>
+                            {% endif %}
+                            {% if order.status == 'Packed' %}
+                            <div class="bg-primary text-white py-1 px-2">
+                                {{order.status}}
+                            </div>
+                            {% endif %}
+                            {% if order.status == 'On The Way' %}
+                            <div class="bg-warning text-dark  py-1 px-2">
+                                {{order.status}}
+                            </div>
+                            {% endif %}
+                            {% if order.status == 'Delivered' %}
+                            <div class="bg-success text-white py-1 px-2">
+                                {{order.status}}
+                            </div>
+                            {% endif %}
+                            {% if order.status == 'Cancel' %}
+                            <div class="bg-danger text-white py-1 px-2">
+                                {{order.status}}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                    <hr>
+                    <!-- card product end-->
+                </div>
+            </div>
+            {% else %}
+            <div class="alert alert-info mt-5" role="alert">
+                You are not order any Product!
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+</div>
+
+{% endblock main-content %}

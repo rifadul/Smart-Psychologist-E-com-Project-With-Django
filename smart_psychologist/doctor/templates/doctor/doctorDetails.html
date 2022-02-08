@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'doctor/css/style.css' %}">
+{% endblock perpageStyle %}
+{% block title %} Doctor Deatils {% endblock title %}
+
+{% block top_banner %}
+{% include 'doctor/doctorHeader.html' %}
+{% endblock top_banner %}
+
+{% block main-content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="doctor_img text-center">
+                <img src="{{ doctordetails.doctor_image.url }}" class="img-fluid img-thumbnail"
+                    alt="{{doctordetails.full_name}}">
+            </div>
+            <div class="about_me text-center mt-3">
+                <h4>{{doctordetails.full_name}}</h4>
+                <h6>{{doctordetails.specialist_sector}}</h6>
+                <h5>{{doctordetails.designation}}</h5>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class=" w-25">About Me</td>
+                        <td>{{doctordetails.about_me}}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>{{doctordetails.phone_number}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{doctordetails.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Chamber</td>
+                        <td>{{doctordetails.chamber_address}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}

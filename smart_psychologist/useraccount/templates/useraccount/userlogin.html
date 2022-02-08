@@ -1,0 +1,95 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'useraccount/css/style.css' %}">
+{% endblock perpageStyle %}
+{% block title %} Login Page {% endblock title %}
+{% block main-content %}
+
+<section class="container-fluid signin-section">
+    <div class="container-width mt-5">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-0 signIn-banner">
+                <div class="overlay container-fluid">
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <img src="{% static 'useraccount/images/logo.png' %}" class="rounded mx-auto d-block"
+                                alt="Smart Psychologist">
+                        </div>
+                        <h4>Account Login</h4>
+                        <hr>
+                        <!-- error message show start-->
+                        <!-- <div class="msg my-3">
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>{{message}}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div> -->
+                        <!-- error message show end-->
+
+                        <!-- message show -->
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show"
+                            role="alert" {% endif %}>
+                            <strong>{{message}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        <!-- message show end -->
+
+
+                        <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                            {% csrf_token %}
+                            {% for field in form %}
+
+                            <div class="form-group">
+                                {{field.label_tag}}
+                                {{field}}
+                                <small id="emailHelp" class="form-text text-danger">{{field.errors | striptags}}
+                                </small>
+                            </div>
+                            {% endfor %}
+
+                            {% if form.non_field_errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for error in form.non_field_errors %}
+                                <p class="form-text text-danger">{{error}}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            <div class="mb-5">
+                                <span class="ml-auto"><a href="{% url 'password_reset' %}" class="forgot-pass">Forgot
+                                        Password</a></span>
+                            </div>
+                            <input type="submit" value="LOGIN" class="btn btn-block btn-bg-color">
+                            <span class="d-block text-left my-4 text-muted">New to Smart Psychologist ?— <a
+                                    href="{% url 'registration' %}">Create an
+                                    Account</a> —</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock main-content %}

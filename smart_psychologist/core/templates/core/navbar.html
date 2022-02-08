@@ -1,0 +1,59 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="smrat_navbar">
+     <div class="container">
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'core/images/logo.png' %}" alt=""
+                    srcset=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mx-auto">
+                    <li class="nav-item {{home_active}}">
+                         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item {{doctor_active}}">
+                         <a class="nav-link" href="{% url 'doctor' %}">Doctor</a>
+                    </li>
+                    <li class="nav-item {{shop_active}}">
+                         <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+                    </li>
+                    <li class="nav-item {{blog_active}}">
+                         <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+               </ul>
+
+               <div>
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                         {% if request.user.is_authenticated %}
+                         <li class="nav-item dropdown mx-2 {{user_active}}">
+                              <a class="nav-link dropdown-toggle text-uppercase" href="#" id="navbarDropdown"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   {{user}}
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                   <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                                   <a class="dropdown-item" href="{% url 'orders' %}">Orders</a>
+                                   <a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a>
+                                   <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                              </div>
+                         </li>
+
+                         <li class="nav-item mx-2 {{cart_active}}">
+                              <a href="{% url 'cart' %}" class="nav-link text-white"><span
+                                        class="badge bg-danger"></span> Cart </a>
+                         </li>
+                         {% else %}
+                         <li class="nav-item {{login_active}}">
+                              <a class="nav-link" href="{% url 'login' %}">Login</a>
+                         </li>
+                         <li class="nav-item {{regi_active}}">
+                              <a class="nav-link" href="{% url 'registration' %}">Registration</a>
+                         </li>
+                         {% endif %}
+                    </ul>
+               </div>
+          </div>
+     </div>
+</nav>

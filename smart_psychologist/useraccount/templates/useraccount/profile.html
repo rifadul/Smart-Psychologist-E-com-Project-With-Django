@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %} {% load static %} {% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'useraccount/css/style.css' %}" />
+{% endblock perpageStyle %} {% block title %} Profile Page {% endblock title %}
+{% block main-content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mt-3">
+      {% include 'useraccount/profile_sitebar.html' %}
+    </div>
+
+    <div class="col-md-9 mx-auto mt-3">
+      <h4>Profile</h4>
+      <hr />
+
+      {% if customar_profile %} {% for cust in customar_profile %}
+      <div class="card" style="width: 50rem">
+        <div class="card-body">
+          <table class="table table-bordered text-center">
+            <tbody>
+              <tr>
+                <td class="text-center w-25" colspan="2">
+                  <img src="{{ cust.profile_image.url }}" class="img-fluid img-thumbnail rounded" alt="{{cust.name}}"
+                    style="height: 250px" />
+                </td>
+              </tr>
+              <tr>
+                <td class="w-25">Username</td>
+                <td>{{user}}</td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>{{cust.name}}</td>
+              </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td>{{cust.phone_number}}</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>{{cust.address}}</td>
+              </tr>
+              <tr>
+                <td>Division</td>
+                <td>{{cust.division}}</td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td>{{cust.city}}</td>
+              </tr>
+              <tr>
+                <td>Zip Code</td>
+                <td>{{cust.zip_code}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {% endfor %} {% else %}
+
+
+      <div class="alert alert-info mt-5" role="alert">
+        Pleace update your profile ! <strong><a href="{% url 'updateprofile' %}">Update
+            Profile</a></strong>
+      </div>
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock main-content %}

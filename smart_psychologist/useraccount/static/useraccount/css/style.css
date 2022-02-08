@@ -1,0 +1,21 @@
+.signIn-banner {
+     width: 100%;
+     height: 500px;
+     background-image: url(../images/login-banner.png);
+     background-repeat: no-repeat;
+     background-size: 100%;
+     background-clip: border-box;
+     background-position: top;
+     padding: 0;
+}
+.overlay {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     background-color: rgba(251, 84, 48, 0.7);
+}
+.btn-bg-color {
+     background-color: #ff4e23;
+     color: white;
+}

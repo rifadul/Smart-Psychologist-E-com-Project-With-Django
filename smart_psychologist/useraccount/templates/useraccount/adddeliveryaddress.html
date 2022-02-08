@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %} {% load static %} {% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'useraccount/css/style.css' %}" />
+{% endblock perpageStyle %} {% block title %} Delivery Address{% endblock title %}
+{% block main-content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            {% include 'useraccount/profile_sitebar.html' %}
+        </div>
+        <div class="col-md-9 mx-auto mt-3">
+            <h4>Add Delivery Address</h4>
+            <hr />
+
+            <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                {% csrf_token %} {% for field in form %}
+
+                <div class="form-group">
+                    {{field.label_tag}} {{field}}
+                    <small id="emailHelp" class="form-text text-danger">{{field.errors | striptags}}
+                    </small>
+                </div>
+                {% endfor %}
+
+                <!-- non field error code -->
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in form.non_field_errors %}
+                    <p class="form-text text-danger">{{error}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info shadow px-5 py-2">Save</button>
+                    <a href="{% url 'address' %}" class=" btn btn-danger shadow px-5 py-2 ms-4">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

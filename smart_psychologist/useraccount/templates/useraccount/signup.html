@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block perpageStyle %}
+<link rel="stylesheet" href="{% static 'useraccount/css/style.css' %}">
+{% endblock perpageStyle %}
+{% block title %} Singup Page {% endblock title %}
+
+{% block main-content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto mt-3">
+            <h4>Account Registration</h4>
+            <hr>
+            <div class="msg my-3">
+                {% if messages %}
+                {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"
+                    {% endif %}>
+                    <strong>{{message}}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+            <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {% for field in forms %}
+
+                <div class="form-group">
+                    {{field.label_tag}}
+                    {{field}}
+                    <small id="emailHelp" class="form-text text-danger">{{field.errors | striptags}} </small>
+                </div>
+                {% endfor %}
+
+                <!-- non field error code -->
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in form.non_field_errors %}
+                    <p class="form-text text-danger">{{error}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <button type="submit" class="btn btn-block btn-bg-color">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

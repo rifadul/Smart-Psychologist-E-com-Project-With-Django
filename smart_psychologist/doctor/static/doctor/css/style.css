@@ -1,0 +1,58 @@
+.doctor {
+     background-color: #f1f7fa;
+}
+
+.page_header {
+     background-image: url(../images/top_banner.jpg);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 50vh;
+}
+
+.team-box-layout1 {
+     padding: 30px 10px 25px 40px;
+     background-color: #ffffff;
+     margin-bottom: 30px;
+}
+.team-box-layout1 .item-img img {
+     background-color: #f1f7fa;
+}
+.item-title a {
+     text-decoration: none;
+     color: black;
+}
+p {
+     margin: 0 0 20px 0;
+     color: #444444;
+}
+.team-box-layout1 .item-content .item-degree {
+     color: #396cf0;
+     font-weight: 500;
+     margin-bottom: 20px;
+}
+.media-body {
+     margin-left: 3rem;
+}
+.team-box-layout1 .item-content .item-title {
+     text-transform: capitalize;
+     font-weight: 600;
+}
+ul {
+     list-style: outside none none;
+     margin: 0;
+     padding: 0;
+}
+.team-box-layout1 .item-content ul.item-btns li {
+     display: inline-block;
+     margin-right: 15px;
+     margin-bottom: 10px;
+}
+
+.team-box-layout1 .item-content ul.item-btns li:last-child {
+     margin-right: 0;
+}
+
+.fp {
+     color: white;
+}

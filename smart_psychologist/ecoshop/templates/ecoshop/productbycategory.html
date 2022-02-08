@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Shop{% endblock title %}
+
+{% block main-content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mt-3">
+            {% include 'ecoshop/product_sitebar.html'%}
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                {% for product in products %}
+
+                <div class="card mx-auto mt-5 " style="width: 17rem;">
+                    <img src="{{ product.product_image.url }}" class="card-img-top" alt="..." style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.product_name}}</h5>
+
+                        {% if product.discount_price %}
+                        <h4>TK. {{product.discount_price}}
+                            <small
+                                class="fw-light text-decoration-line-through"><del>{{product.product_price}}</del></small>
+                        </h4>
+                        {% else %}
+                        <h4>TK. {{product.product_price}}</h4>
+                        {% endif %}
+                        <!-- <button class="btn btn-primary">Add To Cart</button> -->
+                    </div>
+                    <div class="card-footer text-center">
+                        <!-- <form action="/add-to-cart" class="d-inline">
+                    <input type="hidden" name="product_id" id='product_id' value="{{product.id}}">
+                    <button type="submit" class="btn btn-primary shadow">Add to Cart</button>
+
+                </form> -->
+                        <a role="button" href="{% url 'productdetail' product.id %}"
+                            class=" btn btn-info text-white">View
+                            Product</a>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}
